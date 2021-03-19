@@ -1,0 +1,62 @@
+<%- include("./partials/header")%>
+<!--Main Page-->
+
+
+
+
+
+<div class="container">
+    <h1><%=movie.Title%></h1>
+    <!--Card-->
+    <div class="row">
+  <div class="card flex-row flex-wrap">
+    <div class="card-header border-0">
+      <img src="<%=movie.Poster%>" alt="Poster" />
+    </div>
+  </div>
+
+    <%if(movie.Rated=='R'){%>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="data:image/png;base64,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">
+        
+      </div>
+      <%}%>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Ratings</h5>
+    
+      <%movie['Ratings'].forEach(function(rating){%>
+        <p class="card-text">
+          <ul>
+      <li><%=rating.Source%>-<%=rating.Value%></li>
+
+
+      </ul>
+
+
+      <%})%>
+    </p>
+
+    
+   
+  </div>
+</div>
+
+</div>
+
+</div>
+  
+   
+
+    <div class="container">
+      <div class="card-block px-2">
+      <p class="card-text"><b>Plot:</b> <%=movie.Plot%></p>
+      <p class="card-text"><b>Actors:</b> <%=movie.Actors%></p>
+      </div>
+      <div class="w-100"></div>
+      <div class="card-footer w-100 text-muted"><strong>Box Office: <%=movie.BoxOffice%></strong></div>
+    </div>    
+
+
+<%- include("./partials/footer")%>
